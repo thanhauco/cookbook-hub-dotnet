@@ -1,0 +1,245 @@
+@page "/"
+@using CookBookHub.Web.Components.Layout
+
+<PageTitle>CookBook Hub - Home</PageTitle>
+
+<div class="home-page">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🍳 Discover & Share Amazing Recipes</h1>
+            <p>Join thousands of home cooks sharing their favorite recipes</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for recipes..." />
+                <button class="btn-search">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Browse by Category</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-icon">🍝</div>
+                <h3>Italian</h3>
+                <p>245 recipes</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🍜</div>
+                <h3>Asian</h3>
+                <p>189 recipes</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🥗</div>
+                <h3>Healthy</h3>
+                <p>312 recipes</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🍰</div>
+                <h3>Desserts</h3>
+                <p>156 recipes</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-recipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://via.placeholder.com/300x200" alt="Recipe" />
+                </div>
+                <div class="recipe-info">
+                    <h3>Classic Spaghetti Carbonara</h3>
+                    <div class="recipe-meta">
+                        <span>⏱️ 30 min</span>
+                        <span>⭐ 4.8 (124)</span>
+                    </div>
+                    <p class="recipe-author">by @chef_mario</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://via.placeholder.com/300x200" alt="Recipe" />
+                </div>
+                <div class="recipe-info">
+                    <h3>Thai Green Curry</h3>
+                    <div class="recipe-meta">
+                        <span>⏱️ 45 min</span>
+                        <span>⭐ 4.9 (98)</span>
+                    </div>
+                    <p class="recipe-author">by @thai_kitchen</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                    <img src="https://via.placeholder.com/300x200" alt="Recipe" />
+                </div>
+                <div class="recipe-info">
+                    <h3>Chocolate Lava Cake</h3>
+                    <div class="recipe-meta">
+                        <span>⏱️ 25 min</span>
+                        <span>⭐ 5.0 (156)</span>
+                    </div>
+                    <p class="recipe-author">by @sweet_treats</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    .home-page {
+        min-height: 100vh;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .search-bar {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .search-bar input {
+        flex: 1;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    .btn-search {
+        padding: 1rem 2rem;
+        background: white;
+        color: #667eea;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-search:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .categories, .featured-recipes {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    .categories h2, .featured-recipes h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #2d3748;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .category-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.25rem;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+
+    .category-card p {
+        color: #6b7280;
+        font-size: 0.875rem;
+    }
+
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .recipe-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .recipe-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .recipe-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .recipe-info {
+        padding: 1.5rem;
+    }
+
+    .recipe-info h3 {
+        font-size: 1.25rem;
+        color: #2d3748;
+        margin-bottom: 0.75rem;
+    }
+
+    .recipe-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+    }
+
+    .recipe-author {
+        font-size: 0.875rem;
+        color: #9ca3af;
+    }
+</style>
+
+@code {
+    
+}
