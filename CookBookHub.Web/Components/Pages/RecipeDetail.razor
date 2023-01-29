@@ -1,0 +1,348 @@
+@page "/recipe/{id}"
+@using CookBookHub.Web.Components.Layout
+
+<PageTitle>Recipe Detail - CookBook Hub</PageTitle>
+
+<div class="recipe-detail-page">
+    <div class="recipe-header">
+        <div class="recipe-image-large">
+            <img src="https://via.placeholder.com/800x500" alt="Recipe" />
+        </div>
+        <div class="recipe-header-info">
+            <div class="recipe-badges">
+                <span class="badge difficulty">Easy</span>
+                <span class="badge category">Italian</span>
+            </div>
+            <h1>Classic Spaghetti Carbonara</h1>
+            <div class="recipe-meta">
+                <div class="meta-item">
+                    <span class="icon">⏱️</span>
+                    <div>
+                        <strong>30 min</strong>
+                        <p>Total Time</p>
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <span class="icon">👨‍🍳</span>
+                    <div>
+                        <strong>4</strong>
+                        <p>Servings</p>
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <span class="icon">⭐</span>
+                    <div>
+                        <strong>4.8</strong>
+                        <p>124 reviews</p>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-author">
+                <div class="author-avatar">CM</div>
+                <div>
+                    <strong>@@chef_mario</strong>
+                    <p>Published 2 days ago</p>
+                </div>
+            </div>
+            <div class="recipe-actions">
+                <button class="btn-primary">❤️ Save Recipe</button>
+                <button class="btn-secondary">📤 Share</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe-content">
+        <div class="recipe-main">
+            <section class="recipe-section">
+                <h2>Description</h2>
+                <p>A classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper. This authentic carbonara recipe is creamy, delicious, and ready in just 30 minutes!</p>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Ingredients</h2>
+                <ul class="ingredients-list">
+                    <li>400g spaghetti</li>
+                    <li>200g pancetta or guanciale, diced</li>
+                    <li>4 large eggs</li>
+                    <li>100g Pecorino Romano cheese, grated</li>
+                    <li>Black pepper to taste</li>
+                    <li>Salt for pasta water</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Instructions</h2>
+                <ol class="instructions-list">
+                    <li>Bring a large pot of salted water to boil and cook spaghetti according to package directions.</li>
+                    <li>While pasta cooks, fry pancetta in a large skillet until crispy.</li>
+                    <li>In a bowl, whisk together eggs and grated cheese.</li>
+                    <li>Reserve 1 cup pasta water, then drain pasta.</li>
+                    <li>Add hot pasta to the skillet with pancetta, remove from heat.</li>
+                    <li>Quickly stir in egg mixture, adding pasta water to create a creamy sauce.</li>
+                    <li>Season with black pepper and serve immediately.</li>
+                </ol>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Reviews</h2>
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">JS</div>
+                            <div>
+                                <strong>@@john_smith</strong>
+                                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p>Absolutely delicious! Best carbonara I've ever made at home.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="recipe-sidebar">
+            <div class="sidebar-card">
+                <h3>Nutrition Facts</h3>
+                <div class="nutrition-grid">
+                    <div class="nutrition-item">
+                        <span>Calories</span>
+                        <strong>520</strong>
+                    </div>
+                    <div class="nutrition-item">
+                        <span>Protein</span>
+                        <strong>24g</strong>
+                    </div>
+                    <div class="nutrition-item">
+                        <span>Carbs</span>
+                        <strong>68g</strong>
+                    </div>
+                    <div class="nutrition-item">
+                        <span>Fat</span>
+                        <strong>18g</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .recipe-detail-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .recipe-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .recipe-image-large img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .recipe-badges {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .badge {
+        padding: 0.375rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .badge.difficulty {
+        background: #10b981;
+        color: white;
+    }
+
+    .badge.category {
+        background: #3b82f6;
+        color: white;
+    }
+
+    .recipe-header-info h1 {
+        font-size: 2.5rem;
+        color: #2d3748;
+        margin-bottom: 1.5rem;
+    }
+
+    .recipe-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .meta-item .icon {
+        font-size: 2rem;
+    }
+
+    .meta-item strong {
+        display: block;
+        font-size: 1.25rem;
+        color: #2d3748;
+    }
+
+    .meta-item p {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin: 0;
+    }
+
+    .recipe-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f9fafb;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    .recipe-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        flex: 1;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-primary {
+        background: #667eea;
+        color: white;
+    }
+
+    .btn-secondary {
+        background: #f3f4f6;
+        color: #2d3748;
+    }
+
+    .recipe-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+
+    .recipe-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .recipe-section h2 {
+        font-size: 1.5rem;
+        color: #2d3748;
+        margin-bottom: 1rem;
+    }
+
+    .ingredients-list, .instructions-list {
+        padding-left: 1.5rem;
+    }
+
+    .ingredients-list li, .instructions-list li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+    }
+
+    .review-card {
+        background: #f9fafb;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .reviewer-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #667eea;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+
+    .sidebar-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-card h3 {
+        font-size: 1.125rem;
+        color: #2d3748;
+        margin-bottom: 1rem;
+    }
+
+    .nutrition-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .nutrition-item {
+        text-align: center;
+        padding: 1rem;
+        background: #f9fafb;
+        border-radius: 8px;
+    }
+
+    .nutrition-item span {
+        display: block;
+        font-size: 0.75rem;
+        color: #6b7280;
+        margin-bottom: 0.25rem;
+    }
+
+    .nutrition-item strong {
+        font-size: 1.25rem;
+        color: #2d3748;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string? Id { get; set; }
+}
