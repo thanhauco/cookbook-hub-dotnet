@@ -1,0 +1,220 @@
+@page "/profile/{username}"
+@using CookBookHub.Web.Components.Layout
+
+<PageTitle>User Profile - CookBook Hub</PageTitle>
+
+<div class="profile-page">
+    <div class="profile-header">
+        <div class="profile-avatar-large">CM</div>
+        <div class="profile-info">
+            <h1>@@chef_mario</h1>
+            <p>Mario Rossi</p>
+            <p class="profile-bio">Passionate Italian chef sharing family recipes passed down through generations 🍝</p>
+            <div class="profile-stats">
+                <div class="stat">
+                    <strong>48</strong>
+                    <span>Recipes</span>
+                </div>
+                <div class="stat">
+                    <strong>1.2K</strong>
+                    <span>Followers</span>
+                </div>
+                <div class="stat">
+                    <strong>892</strong>
+                    <span>Following</span>
+                </div>
+            </div>
+            <button class="btn-follow">Follow</button>
+        </div>
+    </div>
+
+    <div class="profile-tabs">
+        <button class="tab active">Recipes</button>
+        <button class="tab">Favorites</button>
+        <button class="tab">Reviews</button>
+    </div>
+
+    <div class="profile-content">
+        <div class="recipe-grid">
+            @for (int i = 0; i < 6; i++)
+            {
+                <div class="recipe-card">
+                    <div class="recipe-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Recipe" />
+                    </div>
+                    <div class="recipe-info">
+                        <h3>Recipe Title @(i + 1)</h3>
+                        <div class="recipe-meta">
+                            <span>⏱️ 30 min</span>
+                            <span>⭐ 4.8</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .profile-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .profile-header {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+    }
+
+    .profile-avatar-large {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: 600;
+        flex-shrink: 0;
+    }
+
+    .profile-info h1 {
+        font-size: 2rem;
+        color: #2d3748;
+        margin-bottom: 0.25rem;
+    }
+
+    .profile-info p {
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+    }
+
+    .profile-bio {
+        font-size: 1.125rem;
+        color: #2d3748;
+        margin: 1rem 0;
+    }
+
+    .profile-stats {
+        display: flex;
+        gap: 2rem;
+        margin: 1.5rem 0;
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat strong {
+        font-size: 1.5rem;
+        color: #2d3748;
+    }
+
+    .stat span {
+        font-size: 0.875rem;
+        color: #6b7280;
+    }
+
+    .btn-follow {
+        padding: 0.75rem 2rem;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-follow:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+    }
+
+    .profile-tabs {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid #e5e7eb;
+    }
+
+    .tab {
+        padding: 1rem 2rem;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        color: #6b7280;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-bottom: -2px;
+    }
+
+    .tab.active {
+        color: #667eea;
+        border-bottom-color: #667eea;
+    }
+
+    .tab:hover {
+        color: #667eea;
+    }
+
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .recipe-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .recipe-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .recipe-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .recipe-info {
+        padding: 1rem;
+    }
+
+    .recipe-info h3 {
+        font-size: 1.125rem;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+
+    .recipe-meta {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string? Username { get; set; }
+}
