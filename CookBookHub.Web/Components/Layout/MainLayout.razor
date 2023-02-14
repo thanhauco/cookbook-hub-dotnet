@@ -1,0 +1,185 @@
+@inherits LayoutComponentBase
+
+<div class="app-container">
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-brand">
+                <a href="/">🍳 CookBook Hub</a>
+            </div>
+            <div class="navbar-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/recipes" class="nav-link">Recipes</a>
+                <a href="/create-recipe" class="nav-link">Create</a>
+                <a href="/profile/chef_mario" class="nav-link">Profile</a>
+            </div>
+            <div class="navbar-actions">
+                <button class="btn-search">🔍</button>
+                <button class="btn-user">👤</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        @Body
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CookBook Hub</h3>
+                <p>Share and discover amazing recipes from around the world</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/recipes">Browse Recipes</a>
+                <a href="/create-recipe">Share Recipe</a>
+                <a href="/about">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <a href="#">Blog</a>
+                <a href="#">Forums</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 CookBook Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f3f4f6;
+    }
+
+    .app-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar {
+        background: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .navbar-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #667eea;
+        text-decoration: none;
+    }
+
+    .navbar-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-link {
+        color: #2d3748;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+        color: #667eea;
+    }
+
+    .navbar-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-search, .btn-user {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: #f3f4f6;
+        border-radius: 50%;
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-search:hover, .btn-user:hover {
+        background: #e5e7eb;
+    }
+
+    .main-content {
+        flex: 1;
+    }
+
+    .footer {
+        background: #2d3748;
+        color: white;
+        margin-top: 4rem;
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 1rem;
+        color: #667eea;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .footer-section p {
+        color: #9ca3af;
+        line-height: 1.6;
+    }
+
+    .footer-section a {
+        display: block;
+        color: #9ca3af;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: color 0.2s;
+    }
+
+    .footer-section a:hover {
+        color: white;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #374151;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        color: #9ca3af;
+    }
+</style>
+
+@code {
+    
+}
