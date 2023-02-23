@@ -1,0 +1,193 @@
+@page "/categories"
+@using CookBookHub.Web.Components.Layout
+
+<PageTitle>Categories - CookBook Hub</PageTitle>
+
+<div class="categories-page">
+    <div class="page-header">
+        <h1>Browse by Category</h1>
+        <p>Explore recipes from different cuisines and styles</p>
+    </div>
+
+    <div class="categories-grid">
+        <div class="category-card large">
+            <div class="category-overlay">
+                <div class="category-icon">🍝</div>
+                <h2>Italian</h2>
+                <p>245 recipes</p>
+                <button class="btn-explore">Explore →</button>
+            </div>
+        </div>
+
+        <div class="category-card large">
+            <div class="category-overlay">
+                <div class="category-icon">🍜</div>
+                <h2>Asian</h2>
+                <p>189 recipes</p>
+                <button class="btn-explore">Explore →</button>
+            </div>
+        </div>
+
+        <div class="category-card">
+            <div class="category-overlay">
+                <div class="category-icon">🥗</div>
+                <h2>Healthy</h2>
+                <p>312 recipes</p>
+                <button class="btn-explore">Explore →</button>
+            </div>
+        </div>
+
+        <div class="category-card">
+            <div class="category-overlay">
+                <div class="category-icon">🍰</div>
+                <h2>Desserts</h2>
+                <p>156 recipes</p>
+                <button class="btn-explore">Explore →</button>
+            </div>
+        </div>
+
+        <div class="category-card">
+            <div class="category-overlay">
+                <div class="category-icon">🌮</div>
+                <h2>Mexican</h2>
+                <p>98 recipes</p>
+                <button class="btn-explore">Explore →</button>
+            </div>
+        </div>
+
+        <div class="category-card">
+            <div class="category-overlay">
+                <div class="category-icon">🍔</div>
+                <h2>American</h2>
+                <p>134 recipes</p>
+                <button class="btn-explore">Explore →</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .categories-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        font-size: 1.125rem;
+        color: #6b7280;
+    }
+
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .category-card {
+        height: 250px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .category-card.large {
+        grid-column: span 2;
+        height: 350px;
+    }
+
+    .category-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .category-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .category-card.large .category-icon {
+        font-size: 6rem;
+    }
+
+    .category-overlay h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .category-card.large h2 {
+        font-size: 3rem;
+    }
+
+    .category-overlay p {
+        font-size: 1.125rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-explore {
+        padding: 0.75rem 2rem;
+        background: white;
+        color: #667eea;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        opacity: 0;
+    }
+
+    .category-card:hover .btn-explore {
+        opacity: 1;
+    }
+
+    .btn-explore:hover {
+        transform: translateX(4px);
+    }
+
+    @@media (max-width: 768px) {
+        .category-card.large {
+            grid-column: span 1;
+            height: 250px;
+        }
+
+        .category-card.large .category-icon {
+            font-size: 4rem;
+        }
+
+        .category-card.large h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+@code {
+    
+}
