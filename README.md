@@ -45,11 +45,45 @@ Access:
 ```
 CookBookHub/
 ├── CookBookHub.Domain/          # Domain entities
+│   ├── Entities/
+│   └── Interfaces/
 ├── CookBookHub.Infrastructure/  # Data access
+│   ├── Data/
+│   ├── Repositories/
+│   └── Seed/
 ├── CookBookHub.Application/     # Business logic
+│   ├── DTOs/
+│   ├── Services/
+│   ├── Validators/
+│   └── Interfaces/
 ├── CookBookHub.ApiService/      # REST API
+│   └── Controllers/
 └── CookBookHub.Web/            # Blazor UI
+    ├── Components/
+    │   ├── Pages/
+    │   └── Layout/
+    └── wwwroot/
 ```
 
+## API Endpoints
+
+See [API_DOCUMENTATION.md](API_DOCUMENTATION.md) for detailed API documentation.
+
+### Quick Reference
+- `GET /api/recipes` - Get all recipes
+- `GET /api/recipes/{id}` - Get recipe by ID
+- `POST /api/recipes` - Create new recipe
+- `GET /api/categories` - Get all categories
+- `GET /api/users` - Get all users
+- `POST /api/reviews` - Create review
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed architecture documentation.
+
 ## License
-MIT License
+MIT License - see [LICENSE](LICENSE) for details
