@@ -1,0 +1,196 @@
+@page "/search"
+@using CookBookHub.Web.Components.Layout
+
+<PageTitle>Search - CookBook Hub</PageTitle>
+
+<div class="search-page">
+    <div class="search-header">
+        <h1>Search Recipes</h1>
+        <div class="search-box-large">
+            <input type="text" placeholder="Search for recipes, ingredients, or chefs..." />
+            <button class="btn-search-large">🔍 Search</button>
+        </div>
+    </div>
+
+    <div class="search-filters">
+        <button class="filter-chip active">All</button>
+        <button class="filter-chip">Recipes</button>
+        <button class="filter-chip">Chefs</button>
+        <button class="filter-chip">Ingredients</button>
+    </div>
+
+    <div class="search-results">
+        <div class="results-header">
+            <h2>Search Results</h2>
+            <p>Found 24 recipes matching your search</p>
+        </div>
+
+        <div class="results-grid">
+            @for (int i = 0; i < 6; i++)
+            {
+                <div class="result-card">
+                    <div class="result-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Recipe" />
+                    </div>
+                    <div class="result-content">
+                        <h3>Search Result Recipe @(i + 1)</h3>
+                        <p>A wonderful recipe that matches your search criteria...</p>
+                        <div class="result-meta">
+                            <span>⏱️ 30 min</span>
+                            <span>⭐ 4.8</span>
+                            <span>by @@chef_name</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .search-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .search-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .search-header h1 {
+        font-size: 2.5rem;
+        color: #2d3748;
+        margin-bottom: 2rem;
+    }
+
+    .search-box-large {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+        background: white;
+        padding: 0.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-box-large input {
+        flex: 1;
+        padding: 1rem;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .btn-search-large {
+        padding: 1rem 2rem;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-search-large:hover {
+        background: #5568d3;
+    }
+
+    .search-filters {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .filter-chip {
+        padding: 0.75rem 1.5rem;
+        background: white;
+        border: 1px solid #d1d5db;
+        border-radius: 24px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-weight: 500;
+    }
+
+    .filter-chip.active {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+    }
+
+    .filter-chip:hover {
+        border-color: #667eea;
+    }
+
+    .results-header {
+        margin-bottom: 2rem;
+    }
+
+    .results-header h2 {
+        font-size: 1.5rem;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+
+    .results-header p {
+        color: #6b7280;
+    }
+
+    .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .result-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .result-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .result-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .result-content {
+        padding: 1.5rem;
+    }
+
+    .result-content h3 {
+        font-size: 1.25rem;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+
+    .result-content p {
+        color: #6b7280;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .result-meta {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+    }
+</style>
+
+@code {
+    
+}
