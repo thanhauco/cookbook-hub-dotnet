@@ -1,0 +1,310 @@
+@page "/settings"
+@using CookBookHub.Web.Components.Layout
+
+<PageTitle>Settings - CookBook Hub</PageTitle>
+
+<div class="settings-page">
+    <div class="page-header">
+        <h1>Settings</h1>
+        <p>Manage your account and preferences</p>
+    </div>
+
+    <div class="settings-container">
+        <div class="settings-nav">
+            <button class="nav-item active">Profile</button>
+            <button class="nav-item">Account</button>
+            <button class="nav-item">Notifications</button>
+            <button class="nav-item">Privacy</button>
+        </div>
+
+        <div class="settings-content">
+            <div class="settings-section">
+                <h2>Profile Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-input" value="chef_mario" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-input" value="mario@cookbook.com" />
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Full Name</label>
+                        <input type="text" class="form-input" value="Mario Rossi" />
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Bio</label>
+                        <textarea class="form-input" rows="3">Passionate Italian chef sharing family recipes</textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Avatar URL</label>
+                        <input type="text" class="form-input" placeholder="https://..." />
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>Preferences</h2>
+                <div class="preference-item">
+                    <div>
+                        <strong>Email Notifications</strong>
+                        <p>Receive email updates about your recipes and followers</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-item">
+                    <div>
+                        <strong>Recipe Recommendations</strong>
+                        <p>Get personalized recipe suggestions</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-item">
+                    <div>
+                        <strong>Public Profile</strong>
+                        <p>Make your profile visible to other users</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" checked />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button class="btn-secondary">Cancel</button>
+                <button class="btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .settings-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .page-header {
+        margin-bottom: 3rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        font-size: 1.125rem;
+        color: #6b7280;
+    }
+
+    .settings-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 3rem;
+    }
+
+    .settings-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        padding: 1rem 1.5rem;
+        background: white;
+        border: none;
+        border-radius: 8px;
+        text-align: left;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .nav-item.active {
+        background: #667eea;
+        color: white;
+    }
+
+    .nav-item:hover:not(.active) {
+        background: #f3f4f6;
+    }
+
+    .settings-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .settings-section {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .settings-section:last-of-type {
+        border-bottom: none;
+    }
+
+    .settings-section h2 {
+        font-size: 1.5rem;
+        color: #2d3748;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: #374151;
+        font-size: 0.875rem;
+    }
+
+    .form-input {
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .preference-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        background: #f9fafb;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    .preference-item strong {
+        display: block;
+        color: #2d3748;
+        margin-bottom: 0.25rem;
+    }
+
+    .preference-item p {
+        color: #6b7280;
+        font-size: 0.875rem;
+    }
+
+    .toggle {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+    }
+
+    .toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #d1d5db;
+        transition: 0.4s;
+        border-radius: 28px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+    input:checked + .slider {
+        background-color: #667eea;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(22px);
+    }
+
+    .settings-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn-primary {
+        background: #667eea;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #5568d3;
+    }
+
+    .btn-secondary {
+        background: #f3f4f6;
+        color: #374151;
+    }
+
+    .btn-secondary:hover {
+        background: #e5e7eb;
+    }
+</style>
+
+@code {
+    
+}
