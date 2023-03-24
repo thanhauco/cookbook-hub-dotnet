@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: cookbook-db
+    environment:
+      POSTGRES_DB: cookbook_hub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: CookBookHub.ApiService/Dockerfile
+    container_name: cookbook-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=cookbook_hub;Username=postgres;Password=postgres123
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "5000:80"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: CookBookHub.Web/Dockerfile
+    container_name: cookbook-web
+    depends_on:
+      - api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ApiBaseUrl=http://api:80
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "5001:80"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
