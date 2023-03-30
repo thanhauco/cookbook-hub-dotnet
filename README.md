@@ -1,5 +1,10 @@
 # CookBook Hub 🍳
 
+[![Build Status](https://img.shields.io/github/workflow/status/thanhauco/cookbook-hub/CI-CD)](https://github.com/thanhauco/cookbook-hub/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
+[![.NET](https://img.shields.io/badge/.NET-9.0-purple.svg)](https://dotnet.microsoft.com/)
+
 A modern recipe sharing platform built with ASP.NET Core, Blazor, and PostgreSQL.
 
 ## Features
@@ -84,6 +89,20 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 ## Architecture
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed architecture documentation.
+
+## Documentation
+
+- [API Documentation](API_DOCUMENTATION.md) - REST API endpoints and examples
+- [Architecture](ARCHITECTURE.md) - System design and patterns
+- [Contributing](CONTRIBUTING.md) - How to contribute to the project
+- [Changelog](CHANGELOG.md) - Version history and changes
+- [Deployment](DEPLOYMENT.md) - Deployment guides for various platforms
+- [Security](SECURITY.md) - Security policy and vulnerability reporting
+- [Testing](TESTING.md) - Testing strategies and examples
+- [Performance](PERFORMANCE.md) - Performance optimization guide
+- [FAQ](FAQ.md) - Frequently asked questions
+- [Roadmap](ROADMAP.md) - Future plans and features
+- [Code of Conduct](CODE_OF_CONDUCT.md) - Community guidelines
 
 ## License
 MIT License - see [LICENSE](LICENSE) for details
