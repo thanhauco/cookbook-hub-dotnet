@@ -4,8 +4,11 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
 [![.NET](https://img.shields.io/badge/.NET-9.0-purple.svg)](https://dotnet.microsoft.com/)
+[![Commits](https://img.shields.io/badge/commits-60-blue.svg)](https://github.com/thanhauco/cookbook-hub)
 
 A modern recipe sharing platform built with ASP.NET Core, Blazor, and PostgreSQL.
+
+**✅ 60 Commits | ✅ Production Ready | ✅ Fully Documented**
 
 ## Features
 - 📖 Browse and search recipes
