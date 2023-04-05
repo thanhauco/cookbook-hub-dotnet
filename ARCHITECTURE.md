@@ -3,7 +3,53 @@
 ## System Overview
 CookBook Hub is a recipe sharing platform built with Clean Architecture principles, separating concerns into distinct layers.
 
+### System Context Diagram
+```ascii
++-----------------+        +-----------------+
+|                 |        |                 |
+|   Web Browser   |------->|   CookBook Hub  |
+|     (User)      |        |     System      |
+|                 |        |                 |
++-----------------+        +-----------------+
+```
+
+### Container Diagram
+```ascii
++-----------------+        +-----------------+        +-----------------+
+|                 | HTTPS  |                 | TCP/IP |                 |
+|  Blazor WebApp  |------->|    API Service  |------->|   PostgreSQL    |
+|  (WebAssembly)  |  JSON  |  (ASP.NET Core) |        |    Database     |
+|                 |        |                 |        |                 |
++-----------------+        +-----------------+        +-----------------+
+```
+
 ## Architecture Layers
+
+### Clean Architecture Visualization
+```ascii
++-------------------------------------------------------+
+|                   Presentation Layer                  |
+|          (CookBookHub.Web, CookBookHub.ApiService)    |
++---------------------------+---------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|                   Application Layer                   |
+|                (CookBookHub.Application)              |
++---------------------------+---------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|                      Domain Layer                     |
+|                 (CookBookHub.Domain)                  |
++-------------------------------------------------------+
+                            ^
+                            |
++---------------------------+---------------------------+
+|                  Infrastructure Layer                 |
+|              (CookBookHub.Infrastructure)             |
++-------------------------------------------------------+
+```
 
 ### 1. Domain Layer (`CookBookHub.Domain`)
 - **Entities**: Core business objects (Recipe, User, Category, Review, Ingredient)
